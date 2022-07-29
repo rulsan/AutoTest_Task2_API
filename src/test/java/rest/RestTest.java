@@ -2,7 +2,6 @@ package rest;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import pojo.Pilot;
 import pojo.Film;
