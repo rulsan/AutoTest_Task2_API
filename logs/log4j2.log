@@ -1,0 +1,5 @@
+2022-08-10 00:48:59,137 INFO r.RestTest [main] Log4j2ExampleApp started.
+2022-08-10 00:48:59,176 WARN r.RestTest [main] Something to warn
+2022-08-10 00:48:59,182 ERROR r.RestTest [main] Something failed.
+2022-08-10 00:49:22,272 INFO r.RestTest [main] Luke Skywalker is https://swapi.dev/api/people/1/
+2022-08-10 00:49:28,446 INFO r.RestTest [main] Starship is https://swapi.dev/api/starships/12/
