@@ -13,5 +13,15 @@ package requests;
 
 // Для общих Request/ResponseSpecifications
 
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+
+import static io.restassured.RestAssured.given;
+
 public class Request {
+
+    public static RequestSpecification requestSpec = given()
+                                                            .baseUri("https://swapi.dev/api")
+                                                            .contentType(ContentType.JSON) ;
+
 }
