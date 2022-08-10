@@ -15,7 +15,8 @@ public class Pilot {
     public Pilot() {}
 
     @JsonCreator
-    public Pilot(@JsonProperty("name") String name, @JsonProperty("starships") List<String> starshipsHTTP, @JsonProperty("url") String url) {
+    public Pilot(@JsonProperty("name") String name, @JsonProperty("starships") List<String> starshipsHTTP,
+                 @JsonProperty("url") String url) {
         this.name = name;
         this.starshipsHTTP = starshipsHTTP;
         this.url = url;
@@ -50,7 +51,7 @@ public class Pilot {
 
     @Override
     public String toString() {
-        return "The Pilot is '" + name + '\'' + ", starshipsHTTP=" + this.getStarships().toString() + ", url='" + url + '\'';
+        return "The Pilot is '" + name + '\'' + ", starshipsHTTP=" + getStarships().toString() + ", url='" + url + '\'';
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
-import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Starship {
@@ -63,7 +62,8 @@ public class Starship {
 
     @Override
     public String toString() {
-        return "The Starship is " + name + '\'' + ", starship_class='" + starship_class + '\'' + ", pilotsHTTP=" + this.getPilots().toString() + ", url='" + url + '\'';
+        return "The Starship is " + name + '\'' + ", starship_class='" + starship_class + '\'' + ", pilotsHTTP=" +
+                this.getPilots().toString() + ", url='" + url + '\'';
     }
 
     @Override
@@ -71,7 +71,8 @@ public class Starship {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Starship starship = (Starship) o;
-        return name.equals(starship.name) && starship_class.equals(starship.starship_class) && pilotsHTTP.equals(starship.pilotsHTTP) && url.equals(starship.url);
+        return name.equals(starship.name) && starship_class.equals(starship.starship_class) &&
+                pilotsHTTP.equals(starship.pilotsHTTP) && url.equals(starship.url);
     }
 
     @Override

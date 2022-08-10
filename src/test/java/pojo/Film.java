@@ -16,7 +16,8 @@ public class Film {
     public Film() {}
 
     @JsonCreator
-    public Film(@JsonProperty("title") String title, @JsonProperty("characters") List<String> charactersHTTP, @JsonProperty("url") String url) {
+    public Film(@JsonProperty("title") String title, @JsonProperty("characters") List<String> charactersHTTP,
+                @JsonProperty("url") String url) {
         this.title = title;
         this.charactersHTTP = charactersHTTP;
         this.url = url;
@@ -51,7 +52,8 @@ public class Film {
 
     @Override
     public String toString() {
-        return "The Film is '" + title + '\'' + ", charactersHTTP=" + this.getCharacters().toString() + ", url='" + url + '\'';
+        return "The Film is '" + title + '\'' + ", charactersHTTP=" + this.getCharacters().toString() +
+                ", url='" + url + '\'';
     }
 
     @Override
