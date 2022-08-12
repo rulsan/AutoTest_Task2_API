@@ -2,6 +2,8 @@ package rest;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ExtractableResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import pojo.Pilot;
 import pojo.Film;
@@ -28,14 +30,20 @@ public class RestTest {
         return getObj(http).as(Pilot.class);
     }
 
+    private static final Logger logger = LogManager.getLogger();
+
     @Test
     public void RestTest(){
+
+        logger.info("Log4j2ExampleApp started.");
+        logger.warn("Something to warn");
+        logger.error("Something failed.");
 
         String LukeSkywalkerPilot = getPilots().stream()
                 .filter(f -> f.getName().equals("Luke Skywalker"))
                 .map(p -> p.getUrl()).findFirst().get();
 
-        System.out.println("Luke Skywalker is " + LukeSkywalkerPilot);
+        logger.info("Luke Skywalker is " + LukeSkywalkerPilot);
 
         String XWingShipHTTP =  getFilms().stream()
                 .filter(f -> f.getTitle().equals("A New Hope")).findFirst().get()
@@ -43,7 +51,7 @@ public class RestTest {
                 .filter(p -> getPilot(p).getName().equals("Biggs Darklighter"))
                 .map(p -> getPilot(p).getStarships().get(0)).findFirst().get();
 
-        System.out.println("Starship is " + XWingShipHTTP);
+        logger.info("Starship is " + XWingShipHTTP);
 
         given().when().get(XWingShipHTTP).then()
                 .assertThat()
